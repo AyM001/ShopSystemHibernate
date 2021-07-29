@@ -1,0 +1,29 @@
+CREATE DATABASE `shopsystem` ;
+CREATE TABLE `categorymodel` (
+  `idCategory` int NOT NULL AUTO_INCREMENT,
+  `nameCategory` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idCategory`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `clientmodel` (
+  `idClient` int NOT NULL AUTO_INCREMENT,
+  `balance` int NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idClient`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `hibernate_sequence` (
+  `next_val` bigint DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `stockmodel` (
+  `idStock` int NOT NULL,
+  `maxQuantity` int NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `price` int NOT NULL,
+  `quantity` int NOT NULL,
+  `category` int DEFAULT NULL,
+  PRIMARY KEY (`idStock`),
+  KEY `FKsoy7x6m3sprtgjkhbgk7b7lxv` (`category`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
